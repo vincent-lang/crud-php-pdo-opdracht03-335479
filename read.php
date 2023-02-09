@@ -15,6 +15,12 @@ try {
 
 $sql = "SELECT Id
             ,naam_achtbaan
+            ,naam_pretpark
+            ,naam_land
+            ,topsnelheid
+            ,hoogte
+            ,datum
+            ,cijfer
         FROM achtbaan
         ORDER BY Id ASC";
 
@@ -29,6 +35,12 @@ foreach ($result as $info) {
     $rows .= "<tr>
                 <td>$info->Id</td>
                 <td>$info->naam_achtbaan</td>
+                <td>$info->naam_pretpark</td>
+                <td>$info->naam_land</td>
+                <td>$info->topsnelheid</td>
+                <td>$info->hoogte</td>
+                <td>$info->datum</td>
+                <td>$info->cijfer</td>
                 <td>
                     <a href='delete.php?id={$info->Id}'>
                         <img src='img/b_drop.png' alt='Drop'</img>
@@ -50,7 +62,13 @@ foreach ($result as $info) {
 <table border="1">
     <thead>
         <th>Id</th>
-        <th>naam_achtbaan</th>
+        <th>NaamAchtbaan</th>
+        <th>NaamPretpark</th>
+        <th>Land</th>
+        <th>Topsnelheid</th>
+        <th>Hoogte</th>
+        <th>Datum</th>
+        <th>Cijfer</th>
         <th></th>
         <th></th>
     </thead>
