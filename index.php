@@ -9,6 +9,24 @@
     <title>De 5 snelste achtbanen van Europa</title>
 </head>
 <body>
-    
+    <h1>Invoer Achtbaan</h1>
+    <form action="create.php" method="post">
+        <fieldset>
+            <label for="naam_achtbaan">Naam Achtbaan:</label>
+            <br>
+            <input type="text" name="naam_achtbaan" id="naam_achtbaan">
+            <br>
+            <label for="naam_pretpark">Naam Pretpark:</label>
+            <br>
+            <input type="text" name="naam_pretpark" id="naam_pretpark">
+            <br>
+            <label for="naam_land">Naam Land:</label>
+            <br>
+            <input type="text" name="naam_land" id="naam_land">
+            <br>
+            <input id="submit" type="submit" value="Sla op">
+        </fieldset>
+    </form>
+    </form>
 </body>
 </html>
