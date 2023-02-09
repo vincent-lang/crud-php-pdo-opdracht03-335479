@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $statement->bindValue(":datum", $_POST["datum"], PDO::PARAM_STR);
         $statement->bindValue(":cijfer", $_POST["cijfer"], PDO::PARAM_STR);
 
-        $statement->execute();  
+        $statement->execute();
 
         echo "het record is geupdate";
         header('location: read.php');
@@ -79,42 +79,44 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/anon.png" type="image/x-icon">
-    <title>De 5 snelste achtbanen van Europa</title></head>
+    <title>De 5 snelste achtbanen van Europa</title>
+</head>
 
 <body>
     <h3>Invoer Achtbaan</h3>
-    
+
     <form action="update.php" method="post">
-    <fieldset>
-            <label for="naam_achtbaan" value="<?= $result->NA ?>">Naam Achtbaan:</label>
+        <fieldset>
+            <label for="naam_achtbaan">Naam Achtbaan:</label>
             <br>
-            <input type="text" name="naam_achtbaan" id="naam_achtbaan">
+            <input type="text" name="naam_achtbaan" id="naam_achtbaan" value="<?= $result->NA ?>">
             <br>
-            <label for="naam_pretpark" value="<?= $result->NP ?>">Naam Pretpark:</label>
+            <label for="naam_pretpark">Naam Pretpark:</label>
             <br>
-            <input type="text" name="naam_pretpark" id="naam_pretpark">
+            <input type="text" name="naam_pretpark" id="naam_pretpark" value="<?= $result->NP ?>">
             <br>
-            <label for="naam_land" value="<?= $result->NL ?>">Naam Land:</label>
+            <label for="naam_land">Naam Land:</label>
             <br>
-            <input type="text" name="naam_land" id="naam_land">
+            <input type="text" name="naam_land" id="naam_land" value="<?= $result->NL ?>">
             <br>
-            <label for="topsnelheid" value="<?= $result->TS ?>">Topsnelheid (km/u):</label>
+            <label for="topsnelheid">Topsnelheid (km/u):</label>
             <br>
-            <input type="number" name="topsnelheid" id="topsnelheid" min="1" max="200">
+            <input type="number" name="topsnelheid" id="topsnelheid" min="1" max="200" value="<?= $result->TS ?>">
             <br>
-            <label for="hoogte" value="<?= $result->H ?>">Hoogte (m):</label>
+            <label for="hoogte">Hoogte (m):</label>
             <br>
-            <input type="number" name="hoogte" id="hoogte" min="1" max="200">
+            <input type="number" name="hoogte" id="hoogte" min="1" max="200" value="<?= $result->H ?>">
             <br>
-            <label for="datum" value="<?= $result->D ?>">Datum eerste opening:</label>
+            <label for="datum">Datum eerste opening:</label>
             <br>
-            <input type="date" name="datum" id="datum">
+            <input type="date" name="datum" id="datum" value="<?= $result->D ?>">
             <br>
             <label for="cijfer" value="<?= $result->C ?>">Cijfer voor achtbaan:</label>
             <br>
-            <input type="range" name="cijfer" id="cijfer" min="1" max="10" step="0.1" oninput="num.value = this.value">
+            <input type="range" name="cijfer" id="cijfer" min="1" max="10" step="0.1" oninput="num.value = this.value" value="<?= $result->C ?>">
             <output id="num">5.5</output>
             <br>
+            <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             <input id="submit" type="submit" value="Sla op">
         </fieldset>
     </form>
