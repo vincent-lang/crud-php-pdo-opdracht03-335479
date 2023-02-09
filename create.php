@@ -23,4 +23,4 @@ $statement->bindValue(":naam_achtbaan", $_POST["naam_achtbaan"], PDO::PARAM_STR)
 
 $statement->execute();
 
-// header("location: read.php");
+header("location: read.php");
